@@ -14,24 +14,41 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Nunito';
-    height: 100vh;
-    /* background-color: rgb(0, 0, 0); */
-    /* background-image: url('/src/assets/nightsky.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
+    font-family: 'Jura';
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #000000;
+    position: relative;
+    overflow: hidden;
   }
 
   #root {
     width: 100%;
-    height: 100%;
-    padding-left: calc(50% - 730px);
-    padding-right: calc(50% - 730px);
+    max-width: calc(100% - 100px);
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
-`
+  #ellipse_right_pos {
+    width: 150px;
+    height: 400px;
+    border-radius: 100px;
+    background: linear-gradient(180deg, #FB03F5 0%, #AA9CFF 100%);
+    filter: blur(150px);
+    position: absolute;
+    top: 35%;
+    right: 0;
+  }
+
+  #ellipse_middle_pos {
+    width: 150px;
+    height: 400px;
+    border-radius: 100px;
+    background: linear-gradient(180deg, #FB03F5 0%, #AA9CFF 100%);
+    filter: blur(150px);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  `
