@@ -33,17 +33,19 @@ export const AuthInput = styled.input`
 `;
 
 export const PrimaryButton = styled.button`
-  height: 25px;
+  height: 30px;
   letter-spacing: 3px;
   color: white;
   background-color: transparent;
-  border: 1px solid rgba(251, 3, 245, 0.65);
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 10px;
   transition: 0.7s;
   outline: none;
   cursor: pointer;
   &:hover,
   &:focus  {
-    background-color: rgba(126, 4, 124, 0.65);
+    color: black;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.653);
   }
 `;

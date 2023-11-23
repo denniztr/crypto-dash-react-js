@@ -1,6 +1,7 @@
 import * as Styled from './Header.styled';
 
 
+
 export const HeaderComponent = () => {
   return (
     <Styled.HeaderContainer>
@@ -10,7 +11,7 @@ export const HeaderComponent = () => {
       <Styled.HeaderNavContainer>
         <Styled.HeaderLink>Dashboard</Styled.HeaderLink>
         <Styled.HeaderLink>Markets</Styled.HeaderLink>
-        <Styled.HeaderLink>Losers</Styled.HeaderLink>
+        <Styled.HeaderLink>Stats</Styled.HeaderLink>
         <Styled.HeaderLink>Exchange</Styled.HeaderLink>
       </Styled.HeaderNavContainer>
       <Styled.HeaderInputContainer>
