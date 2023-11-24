@@ -9,9 +9,9 @@ export const HeaderComponent = () => {
         <Styled.HeaderTitle>Crypto<span style={{color: 'rgba(135, 0, 0, 1)'}}>Dash</span></Styled.HeaderTitle>
       </Styled.HeaderTitleContainer>
       <Styled.HeaderNavContainer>
-        <Styled.HeaderLink>Dashboard</Styled.HeaderLink>
+        <Styled.HeaderLink>Coins</Styled.HeaderLink>
+        <Styled.HeaderLink>Exchanges</Styled.HeaderLink>
         <Styled.HeaderLink>Markets</Styled.HeaderLink>
-        <Styled.HeaderLink>Stats</Styled.HeaderLink>
         <Styled.HeaderLink>Exchange</Styled.HeaderLink>
       </Styled.HeaderNavContainer>
       <Styled.HeaderInputContainer>
