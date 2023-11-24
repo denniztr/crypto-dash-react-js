@@ -1,19 +1,54 @@
+import { useEffect, useState } from 'react';
+
 import * as Styled from './Coins.styled';
 
 
 export const CoinsComponent = () => {
+  const [bitcoinPrice, setBitcoinPrice] = useState();
+  const [ethereumPrice, setEthereumPrice] = useState();
+  const [allPrices, setAllPrices] = useState();
+
+  useEffect(() => {
+    const pricesWs = new WebSocket('wss://ws.coincap.io/prices?assets=bitcoin')
+
+    pricesWs.onmessage = function (msg) {
+        const data = JSON.parse(msg.data);
+        setBitcoinPrice(data.bitcoin);
+    }
+  }, []);
+
+  useEffect(() => {
+    const pricesWs = new WebSocket('wss://ws.coincap.io/prices?assets=ethereum')
+
+    pricesWs.onmessage = function (msg) {
+        const data = JSON.parse(msg.data);
+        setEthereumPrice(data.ethereum);
+    }
+  }, []);
+
+  useEffect(() => {
+    const pricesWs = new WebSocket('wss://ws.coincap.io/prices?assets=ALL')
+
+    pricesWs.onmessage = function (msg) {
+        const data = JSON.parse(msg.data);
+        setAllPrices(data);
+    }
+  }, []);
+
+console.log(allPrices);
+
   return (
       <Styled.CoinsContainer>
         <Styled.CoinsTable>
           <Styled.CoinsCaption>Top Rated Coins</Styled.CoinsCaption>
           <Styled.CellsContainer>
             <Styled.CoinName>BTC</Styled.CoinName>
-            <Styled.CoinPrice>37,497.78</Styled.CoinPrice>
+            <Styled.CoinPrice>{bitcoinPrice}</Styled.CoinPrice>
             <Styled.CoinUpdate24Hrs>+2.5%</Styled.CoinUpdate24Hrs>
           </Styled.CellsContainer>
           <Styled.CellsContainer>
             <Styled.CoinName>ETH</Styled.CoinName>
-            <Styled.CoinPrice>2068.86</Styled.CoinPrice>
+            <Styled.CoinPrice>{ethereumPrice}</Styled.CoinPrice>
             <Styled.CoinUpdate24Hrs>+2.4%</Styled.CoinUpdate24Hrs>
           </Styled.CellsContainer>
           <Styled.CellsContainer>
@@ -23,7 +58,7 @@ export const CoinsComponent = () => {
           </Styled.CellsContainer>
           <Styled.CellsContainer>
             <Styled.CoinName>BNB</Styled.CoinName>
-            <Styled.CoinPrice>233.69</Styled.CoinPrice>
+            <Styled.CoinPrice>345</Styled.CoinPrice>
             <Styled.CoinUpdate24Hrs style={{color: '#480101'}} >-0.17%</Styled.CoinUpdate24Hrs>
           </Styled.CellsContainer>
           <Styled.CellsContainer>

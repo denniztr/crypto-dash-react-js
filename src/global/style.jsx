@@ -28,6 +28,7 @@ export const GlobalStyles = createGlobalStyle`
     max-width: calc(100% - 100px);
     margin-left: 50px;
     margin-right: 50px;
+    z-index: 1;
   }
 
   #ellipse_right_pos {

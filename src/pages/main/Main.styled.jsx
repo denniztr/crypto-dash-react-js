@@ -11,7 +11,7 @@ export const MainContainer = styled.div`
 export const MainContent = styled.div`
   width: 1400px;
   border-radius: 40px;
-  background-color: rgb(23, 23, 23);
+  background-color: rgba(235, 230, 230, 0.1);
 `;
 
 export const GridContainer = styled.div`
